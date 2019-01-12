@@ -2,14 +2,19 @@
     <mat-icon svgIcon='arrow-right'></mat-icon>
 </button>
 
-<button id='gas' mat-icon-button>
-    <mat-icon svgIcon='fart'></mat-icon>
-</button>
+<mat-button-toggle-group #group="matButtonToggleGroup">
+    <mat-button-toggle id='gas' mat-icon-button (click)='startMoving()'>
+        <mat-icon svgIcon='fart'></mat-icon>
+    </mat-button-toggle>
+
+    <mat-button-toggle mat-icon-button (click)='stopMoving()'>
+        <mat-icon svgIcon='stop'></mat-icon>
+    </mat-button-toggle>
+</mat-button-toggle-group>
 
 <button mat-icon-button>
     <mat-icon svgIcon='arrow-right'></mat-icon>
 </button>
 
-<button mat-icon-button>
-    <mat-icon svgIcon='stop'></mat-icon>
-</button>
+
+<mat-slider></mat-slider>
