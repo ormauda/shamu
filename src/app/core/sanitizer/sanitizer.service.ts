@@ -13,7 +13,9 @@ export class SanitizerService {
     }
 
     initialize(): void {
+        this.registerSvgIcon('arrow-right');
         this.registerSvgIcon('fart');
+        this.registerSvgIcon('stop');
     }
 
     registerSvgIcon(iconName: string) {
