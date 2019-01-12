@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { SafeResourceUrl } from '@angular/platform-browser';
+
+import { SanitizerService } from './core/sanitizer/sanitizer.service';
 
 
 @Component({
@@ -12,8 +14,8 @@ export class AppComponent {
 
     safeURL: SafeResourceUrl;
     
-    constructor(private _sanitizer: DomSanitizer) {
+    constructor(private sanitizerService: SanitizerService) {
         const videoURL = 'https://www.youtube.com/embed/Tp4a3I2Ikko';
-        this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(videoURL);
+        this.safeURL = this.sanitizerService.getSafeUrl(videoURL);
     }
 }
