@@ -2,21 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ControlComponent } from './control/control.component';
+import { CoreModule } from './core/core.module';
+import { FeaturesModule } from './features/features.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        ControlComponent
+        AppComponent
     ],
     imports: [
-        BrowserModule,
-        MatButtonModule,
-        MatIconModule,
-        HttpClientModule
+        CoreModule,
+        FeaturesModule,
+        SharedModule
     ],
     providers: [],
     bootstrap: [AppComponent]
